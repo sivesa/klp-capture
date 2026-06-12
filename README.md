@@ -1,4 +1,4 @@
-# KLP Capture — Kaizen Learning Platform Mobile
+# ISS Capture — ISS - Kaizen Learning Platform LMS
 
 A cross-platform mobile application (React + Ionic) enabling teachers at South African schools to photograph handwritten answer sheets, convert them to PDFs, grade, and submit directly to the LMS with AI-powered grading suggestions.
 
@@ -11,7 +11,7 @@ A cross-platform mobile application (React + Ionic) enabling teachers at South A
 - **Gemini 2.5 Flash integration** — AI analysis of handwritten content via BFF proxy
 - **Status tracking** — assignment list with filterable status badges
 - **Secure authentication** — JWT tokens stored in Keychain / EncryptedSharedPreferences
-- **Responsive UI** — Ionic components with custom KLP design system
+- **Responsive UI** — Ionic components with custom ISS design system
 
 ## Tech Stack
 
@@ -32,8 +32,8 @@ A cross-platform mobile application (React + Ionic) enabling teachers at South A
 ### Installation
 
 ```bash
-git clone https://github.com/sivesa/klp-capture.git
-cd klp-capture
+git clone https://github.com/sivesa/iss-capture.git
+cd iss-capture
 npm install
 ```
 
