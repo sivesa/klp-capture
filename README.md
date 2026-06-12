@@ -1,6 +1,6 @@
 # KLP Capture — Kaizen Learning Platform Mobile
 
-A cross-platform mobile application (React + Ionic) enabling teachers at South African township schools to photograph handwritten answer sheets, convert them to PDFs, and submit directly to the LMS with AI-powered grading suggestions.
+A cross-platform mobile application (React + Ionic) enabling teachers at South African schools to photograph handwritten answer sheets, convert them to PDFs, grade, and submit directly to the LMS with AI-powered grading suggestions.
 
 ## Features
 
@@ -32,7 +32,7 @@ A cross-platform mobile application (React + Ionic) enabling teachers at South A
 ### Installation
 
 ```bash
-git clone <repo-url>
+git clone https://github.com/sivesa/klp-capture.git
 cd klp-capture
 npm install
 ```
