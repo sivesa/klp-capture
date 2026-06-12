@@ -1,0 +1,161 @@
+/* KLP Capture – global styles layered on top of Ionic defaults */
+
+/* ── Base ─────────────────────────────────────────────────────────────────── */
+* { box-sizing: border-box; }
+
+ion-app { background: var(--klp-navy); }
+
+/* Radial ambient glow behind content */
+ion-content::part(scroll) {
+  background:
+    radial-gradient(ellipse 80% 40% at 50% -10%,
+      rgba(0, 191, 166, 0.07) 0%, transparent 70%),
+    var(--klp-navy);
+}
+
+/* ── Typography ───────────────────────────────────────────────────────────── */
+h1, h2, h3 { font-family: system-ui, -apple-system, sans-serif; letter-spacing: -0.3px; }
+
+/* ── Toolbar / Header ─────────────────────────────────────────────────────── */
+ion-toolbar {
+  --background: rgba(15, 27, 53, 0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+/* ── Tab bar ──────────────────────────────────────────────────────────────── */
+ion-tab-bar {
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  height: 64px;
+}
+
+ion-tab-button {
+  --color: var(--klp-slate);
+  --color-selected: var(--klp-teal);
+}
+
+ion-tab-button.tab-selected ion-label { color: var(--klp-teal); }
+
+/* Camera tab FAB elevation */
+.tab-camera-slot {
+  position: relative;
+}
+.tab-camera-slot ion-icon {
+  background: linear-gradient(135deg, var(--klp-teal), var(--klp-teal-dim));
+  color: var(--klp-navy);
+  border-radius: 50%;
+  padding: 12px;
+  font-size: 24px;
+  margin-top: -18px;
+  box-shadow: 0 4px 20px rgba(0, 191, 166, 0.4);
+  border: 3px solid var(--klp-navy);
+}
+
+/* ── Cards ────────────────────────────────────────────────────────────────── */
+ion-card {
+  --background: rgba(26, 46, 82, 0.6);
+  border: 1px solid rgba(0, 191, 166, 0.12);
+  border-radius: var(--klp-r-lg) !important;
+  backdrop-filter: blur(12px);
+  box-shadow: none;
+  margin: 0 0 12px 0;
+}
+
+/* ── Buttons ──────────────────────────────────────────────────────────────── */
+ion-button {
+  --border-radius: var(--klp-r-md);
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  text-transform: none;
+}
+ion-button[color="primary"] {
+  --box-shadow: 0 4px 16px rgba(0, 191, 166, 0.3);
+}
+
+/* ── Inputs ───────────────────────────────────────────────────────────────── */
+ion-input, ion-searchbar {
+  --background: rgba(26, 46, 82, 0.5);
+  --border-radius: var(--klp-r-md);
+  --color: var(--klp-warm);
+  --placeholder-color: var(--klp-slate);
+  border: 1px solid rgba(0, 191, 166, 0.15);
+  border-radius: var(--klp-r-md);
+}
+ion-input:focus-within, ion-searchbar:focus-within {
+  border-color: var(--klp-teal);
+}
+
+/* ── List / Item ──────────────────────────────────────────────────────────── */
+ion-list { background: transparent !important; }
+ion-item {
+  --background: rgba(26, 46, 82, 0.5);
+  --border-color: rgba(0, 191, 166, 0.1);
+  --inner-border-width: 0 0 1px 0;
+  border-radius: var(--klp-r-sm);
+}
+
+/* ── Modal sheet ──────────────────────────────────────────────────────────── */
+ion-modal {
+  --background: var(--klp-navy-mid);
+  --border-radius: var(--klp-r-xl);
+  --box-shadow: 0 -4px 40px rgba(0, 0, 0, 0.5);
+}
+ion-modal::part(backdrop) {
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(4px);
+}
+
+/* ── Status badges ────────────────────────────────────────────────────────── */
+.badge {
+  display: inline-flex; align-items: center; gap: 4px;
+  padding: 3px 10px; border-radius: 20px;
+  font-size: 11px; font-weight: 700; letter-spacing: 0.2px;
+  white-space: nowrap;
+}
+.badge-pending   { background: rgba(245,166,35,0.15);  color: var(--klp-amber); }
+.badge-captured  { background: rgba(0,191,166,0.12);   color: var(--klp-teal);  }
+.badge-queued    { background: rgba(36,59,110,0.7);    color: #7B9FD4;           }
+.badge-submitted { background: rgba(0,191,166,0.18);   color: var(--klp-teal);  }
+.badge-graded    { background: rgba(0,191,166,0.25);   color: #00E5C8;
+                   border: 1px solid rgba(0,191,166,0.3); }
+.badge-failed    { background: rgba(232,68,90,0.15);   color: var(--klp-rose);  }
+
+/* ── Scanner frame animation ─────────────────────────────────────────────── */
+@keyframes cornerPulse {
+  0%, 100% { border-color: var(--klp-teal); box-shadow: none; }
+  50% { border-color: #00FFDD; box-shadow: 0 0 12px 2px var(--klp-teal-glow); }
+}
+@keyframes scanLine {
+  0%   { top: 24px;  opacity: 0; }
+  10%  { opacity: 1; }
+  90%  { opacity: 1; }
+  100% { top: calc(100% - 24px); opacity: 0; }
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes slideUp {
+  from { transform: translateY(60px); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ── Utility classes ──────────────────────────────────────────────────────── */
+.klp-pad      { padding: 20px 18px; }
+.klp-section  { font-size: 11px; font-weight: 700; letter-spacing: 1.2px;
+                 text-transform: uppercase; color: var(--klp-slate); margin-bottom: 12px; }
+.klp-card     { background: rgba(26,46,82,0.6); border: 1px solid rgba(0,191,166,0.12);
+                border-radius: var(--klp-r-lg); padding: 18px; backdrop-filter: blur(12px); }
+.text-teal    { color: var(--klp-teal); }
+.text-amber   { color: var(--klp-amber); }
+.text-rose    { color: var(--klp-rose); }
+.text-slate   { color: var(--klp-slate); }
+.text-warm    { color: var(--klp-warm); }
+.fw-700       { font-weight: 700; }
+.fw-800       { font-weight: 800; }
+.fs-11        { font-size: 11px; }
+.fs-12        { font-size: 12px; }
+.fs-13        { font-size: 13px; }
+.fs-14        { font-size: 14px; }
