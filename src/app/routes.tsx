@@ -42,7 +42,7 @@ export const AppRoutes: React.FC<Props> = ({ user }) => (
                   <IonLabel>Home</IonLabel>
                 </IonTabButton>
 
-                <IonTabButton tab="camera" href="/app/camera" className="tab-camera-slot">
+                <IonTabButton tab="camera" href="/app/camera">
                   <IonIcon icon={cameraOutline} />
                   <IonLabel>Capture</IonLabel>
                 </IonTabButton>

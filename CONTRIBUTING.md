@@ -14,7 +14,7 @@ Thank you for contributing to the Kaizen Learning Platform! This document outlin
 ### Before You Start
 
 1. Fork the repository
-2. Create a feature branch: `git checkout -b feat/your-feature`
+2. Create a feature branch: `git checkout -b feature/your-feature`
 3. Keep commits atomic and well-described
 
 ### Code Standards
